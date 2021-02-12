@@ -26,7 +26,7 @@ const App = () => {
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={search}
       />
-      {weather.main && (
+      {weather.name ? (
         <div className="city">
           <h2 className="city-name">
             <span>{weather.name}</span>
@@ -44,6 +44,10 @@ const App = () => {
             <p>{weather.weather[0].description}</p>
           </div>
         </div>
+      ) : (
+        <h3>
+          Type Your Place
+        </h3>
       )}
     </div>
   );
